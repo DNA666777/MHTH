@@ -1,0 +1,13 @@
+12/04/2021 13:24:15	This log contains information about the import operation of the script 'MHTH.edmx.sql' into project 'MHTH.DatabaseSyncronize' on computer 'DESKTOP-3LQAT4V' by user'kevin.
+12/04/2021 13:24:15	Started importing file: C:\Users\kevin\source\repos\MHTH.Database\Database\MHTH.edmx.sql 
+12/04/2021 13:24:15	File name C:\Users\kevin\source\repos\MHTH.Database\Database\MHTH.edmx.sql (size: 4878)
+12/04/2021 13:24:15	Parsing import script
+12/04/2021 13:24:16	Total number of batches in script: 20
+12/04/2021 13:24:16	Total number of statements in script: 16
+12/04/2021 13:24:16	The script was successfully imported into the project.
+12/04/2021 13:24:16	Analyzing schema objects...
+12/04/2021 13:24:16	Scanning project for duplicate elements
+12/04/2021 13:24:16	Finished duplicate element processing
+12/04/2021 13:24:17	In the script that you provided to the import operation, one or more statements were not fully understood. These statements were moved to the ScriptsIgnoredOnImport.sql file. Review the file contents for additional information.
+12/04/2021 13:24:19	A summary of the import was saved to the following location: C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\Import Script Logs\MHTH_edmx_sql_20210412112415.log
+12/04/2021 13:24:19	Click Finish to continue...

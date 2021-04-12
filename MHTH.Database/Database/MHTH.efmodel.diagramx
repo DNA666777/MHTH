@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<eFModelDiagrams>
+<eFModelDiagram dslVersion="1.0.0.0" Id="ff9937b6-bc06-460c-92ab-7a018e15a148" type="Sawczyn.EFDesigner.EFModel.EFModelDiagram" absoluteBounds="0, 0, 11, 8.5" name="MHTH">
+  <modelRootMoniker Id="cba47279-0950-4257-bb2c-e4d5e72a52a4" />
+  <nestedChildShapes>
+    <classShape Id="dbb6d889-2f71-4526-b2f6-1da2b33889ea" absoluteBounds="8.90625, 3.4895834922790527, 1.5, 1.7550732421874997" fillColor="0, 122, 204" textColor="White" outlineColor="Black" outlineDashStyle="Solid" outlineThickness="0.01">
+      <modelClassMoniker Id="b75aae42-670c-4e30-97cb-8c5499d22798" />
+      <relativeChildShapes />
+      <nestedChildShapes>
+        <elementListCompartment Id="d8904e8a-3cae-474e-9126-764cc1f8b937" absoluteBounds="8.92125, 3.7995834922790523, 1.4700000000000002, 0.8262939453125" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b3176287-1ee5-4f6f-8a75-d8e3e046b035" absoluteBounds="8.92125, 4.635877437591553, 1.4700000000000002, 0.2493896484375" name="AssociationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f9924397-446c-4fea-86bf-cc33964098cd" absoluteBounds="8.92125, 4.8952670860290528, 1.4700000000000002, 0.2493896484375" name="SourcesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</eFModelDiagram>
+</eFModelDiagrams>

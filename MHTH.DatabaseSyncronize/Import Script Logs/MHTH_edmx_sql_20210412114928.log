@@ -1,0 +1,31 @@
+12/04/2021 13:49:28	This log contains information about the import operation of the script 'MHTH.edmx.sql' into project 'MHTH.DatabaseSyncronize' on computer 'DESKTOP-3LQAT4V' by user'kevin.
+12/04/2021 13:49:28	Started importing file: C:\Users\kevin\source\repos\MHTH.Database\Database\MHTH.edmx.sql 
+12/04/2021 13:49:28	File name C:\Users\kevin\source\repos\MHTH.Database\Database\MHTH.edmx.sql (size: 6558)
+12/04/2021 13:49:28	Parsing import script
+12/04/2021 13:49:28	Total number of batches in script: 31
+12/04/2021 13:49:28	Total number of statements in script: 18
+12/04/2021 13:49:28	The script was successfully imported into the project.
+12/04/2021 13:49:28	Analyzing schema objects...
+12/04/2021 13:49:28	Scanning project for duplicate elements
+12/04/2021 13:49:28	Element 'Monsters' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\Monsters.sql'.
+12/04/2021 13:49:28	Element 'QuestTemplates' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:28	Element 'QuestTemplateNames' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplateNames.sql'.
+12/04/2021 13:49:28	Element 'QuestTemplateLores' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplateLores.sql'.
+12/04/2021 13:49:28	Element 'QuestTemplateClients' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplateClients.sql'.
+12/04/2021 13:49:28	Element 'FK_QuestTemplateQuestTemplateName' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:28	Element 'FK_QuestTemplateLoreQuestTemplate' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:28	Element 'FK_QuestTemplateQuestTemplateClient' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:29	Element 'FK_MonsterQuestTemplate' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:29	Element 'PK_Monsters' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\Monsters.sql'.
+12/04/2021 13:49:29	Element 'PK_QuestTemplates' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:29	Element 'PK_QuestTemplateNames' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplateNames.sql'.
+12/04/2021 13:49:29	Element 'PK_QuestTemplateLores' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplateLores.sql'.
+12/04/2021 13:49:29	Element 'PK_QuestTemplateClients' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplateClients.sql'.
+12/04/2021 13:49:29	Element 'IX_FK_QuestTemplateQuestTemplateName' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:29	Element 'IX_FK_QuestTemplateLoreQuestTemplate' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:29	Element 'IX_FK_QuestTemplateQuestTemplateClient' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:29	Element 'IX_FK_MonsterQuestTemplate' was merged into the existing script: 'C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\dbo\Tables\QuestTemplates.sql'.
+12/04/2021 13:49:30	Finished duplicate element processing
+12/04/2021 13:49:30	In the script that you provided to the import operation, one or more statements were not fully understood. These statements were moved to the ScriptsIgnoredOnImport.sql file. Review the file contents for additional information.
+12/04/2021 13:49:30	A summary of the import was saved to the following location: C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\Import Script Logs\MHTH_edmx_sql_20210412114928.log
+12/04/2021 13:49:30	Click Finish to continue...

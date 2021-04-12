@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MHTHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MHTHEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Monsters" EntityType="MHTHModel.Monster" />
+    <EntitySet Name="QuestTemplates" EntityType="MHTHModel.QuestTemplate" />
+    <EntitySet Name="QuestTemplateNames" EntityType="MHTHModel.QuestTemplateName" />
+    <EntitySet Name="QuestTemplateLores" EntityType="MHTHModel.QuestTemplateLore" />
+    <EntitySet Name="QuestTemplateClients" EntityType="MHTHModel.QuestTemplateClient" />
+    <AssociationSet Name="QuestTemplateQuestTemplateName" Association="MHTHModel.QuestTemplateQuestTemplateName">
+      <End Role="QuestTemplate" EntitySet="QuestTemplates" />
+      <End Role="QuestTemplateName" EntitySet="QuestTemplateNames" />
+    </AssociationSet>
+    <AssociationSet Name="QuestTemplateLoreQuestTemplate" Association="MHTHModel.QuestTemplateLoreQuestTemplate">
+      <End Role="QuestTemplate" EntitySet="QuestTemplates" />
+      <End Role="QuestTemplateLore" EntitySet="QuestTemplateLores" />
+    </AssociationSet>
+    <AssociationSet Name="QuestTemplateQuestTemplateClient" Association="MHTHModel.QuestTemplateQuestTemplateClient">
+      <End Role="QuestTemplate" EntitySet="QuestTemplates" />
+      <End Role="QuestTemplateClient" EntitySet="QuestTemplateClients" />
+    </AssociationSet>
+    <AssociationSet Name="MonsterQuestTemplate" Association="MHTHModel.MonsterQuestTemplate">
+      <End Role="QuestTemplate" EntitySet="QuestTemplates" />
+      <End Role="Monster" EntitySet="Monsters" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Monster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" />
+    <Property Name="CR" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+  </EntityType>
+  <EntityType Name="QuestTemplate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="QuestTemplateName" Relationship="MHTHModel.QuestTemplateQuestTemplateName" FromRole="QuestTemplate" ToRole="QuestTemplateName" />
+    <Property Name="QuestTemplateNameId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="QuestTemplateLore" Relationship="MHTHModel.QuestTemplateLoreQuestTemplate" FromRole="QuestTemplate" ToRole="QuestTemplateLore" />
+    <Property Name="QuestTemplateLoreId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="QuestTemplateClient" Relationship="MHTHModel.QuestTemplateQuestTemplateClient" FromRole="QuestTemplate" ToRole="QuestTemplateClient" />
+    <Property Name="QuestTemplateClientId" Type="Int32" Nullable="false" />
+    <Property Name="QuestTypeId" Type="MHTHModel.QuestType" Nullable="false" />
+    <NavigationProperty Name="Monster" Relationship="MHTHModel.MonsterQuestTemplate" FromRole="QuestTemplate" ToRole="Monster" />
+    <Property Name="MonsterId" Type="Int32" Nullable="true" />
+  </EntityType>
+  <EntityType Name="QuestTemplateName">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EN" Type="String" Nullable="true" />
+    <Property Name="FR" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="QuestTemplateLore">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EN" Type="String" Nullable="true" />
+    <Property Name="FR" Type="String" Nullable="true" />
+  </EntityType>
+  <EntityType Name="QuestTemplateClient">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EN" Type="String" Nullable="true" />
+    <Property Name="FR" Type="String" Nullable="true" />
+  </EntityType>
+  <Association Name="QuestTemplateQuestTemplateName">
+    <End Type="MHTHModel.QuestTemplate" Role="QuestTemplate" Multiplicity="*" />
+    <End Type="MHTHModel.QuestTemplateName" Role="QuestTemplateName" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="QuestTemplateName">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestTemplate">
+        <PropertyRef Name="QuestTemplateNameId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestTemplateLoreQuestTemplate">
+    <End Type="MHTHModel.QuestTemplate" Role="QuestTemplate" Multiplicity="*" />
+    <End Type="MHTHModel.QuestTemplateLore" Role="QuestTemplateLore" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="QuestTemplateLore">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestTemplate">
+        <PropertyRef Name="QuestTemplateLoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="QuestTemplateQuestTemplateClient">
+    <End Type="MHTHModel.QuestTemplate" Role="QuestTemplate" Multiplicity="*" />
+    <End Type="MHTHModel.QuestTemplateClient" Role="QuestTemplateClient" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="QuestTemplateClient">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestTemplate">
+        <PropertyRef Name="QuestTemplateClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EnumType Name="QuestType">
+    <Member Name="Gathering" Value="1" />
+    <Member Name="Hunting" Value="2" />
+    <Member Name="Capture" Value="3" />
+  </EnumType>
+  <Association Name="MonsterQuestTemplate">
+    <End Type="MHTHModel.QuestTemplate" Role="QuestTemplate" Multiplicity="*" />
+    <End Type="MHTHModel.Monster" Role="Monster" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Monster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="QuestTemplate">
+        <PropertyRef Name="MonsterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

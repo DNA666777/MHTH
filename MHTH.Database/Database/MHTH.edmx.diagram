@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="305d5edd0cfa40ebb29c4eeb512be860" Name="Diagram1" >
+        <EntityTypeShape EntityType="MHTHModel.Monster" Width="1.5" PointX="9.25" PointY="2.125" />
+        <EntityTypeShape EntityType="MHTHModel.QuestTemplate" Width="1.5" PointX="8.25" PointY="6.375" />
+        <EntityTypeShape EntityType="MHTHModel.QuestTemplateName" Width="1.5" PointX="11.75" PointY="5.875" />
+        <EntityTypeShape EntityType="MHTHModel.QuestTemplateLore" Width="1.5" PointX="14.625" PointY="5.625" />
+        <EntityTypeShape EntityType="MHTHModel.QuestTemplateClient" Width="1.5" PointX="11.5" PointY="9.75" />
+        <AssociationConnector Association="MHTHModel.QuestTemplateQuestTemplateName" />
+        <AssociationConnector Association="MHTHModel.QuestTemplateLoreQuestTemplate" />
+        <AssociationConnector Association="MHTHModel.QuestTemplateQuestTemplateClient" />
+        <AssociationConnector Association="MHTHModel.MonsterQuestTemplate" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

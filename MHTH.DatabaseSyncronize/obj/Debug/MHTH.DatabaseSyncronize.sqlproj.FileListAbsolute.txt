@@ -1,0 +1,16 @@
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\bin\Debug\MHTH.DatabaseSyncronize.dacpac
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\bin\Debug\MHTH.DatabaseSyncronize.dll
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\bin\Debug\MHTH.DatabaseSyncronize.pdb
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\MHTH.DatabaseSyncronize.sqlprojAssemblyReference.cache
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\Model.xml
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\refactor.xml
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\postdeploy.sql
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\predeploy.sql
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\MHTH.DatabaseSyncronize.dll
+C:\Users\kevin\source\repos\MHTH.DatabaseSyncronize\obj\Debug\MHTH.DatabaseSyncronize.pdb
+C:\Users\kevin\source\repos\MHTH\MHTH.DatabaseSyncronize\bin\Debug\MHTH.DatabaseSyncronize.dacpac
+C:\Users\kevin\source\repos\MHTH\MHTH.DatabaseSyncronize\bin\Debug\MHTH.DatabaseSyncronize.dll
+C:\Users\kevin\source\repos\MHTH\MHTH.DatabaseSyncronize\bin\Debug\MHTH.DatabaseSyncronize.pdb
+C:\Users\kevin\source\repos\MHTH\MHTH.DatabaseSyncronize\obj\Debug\MHTH.DatabaseSyncronize.sqlprojAssemblyReference.cache
+C:\Users\kevin\source\repos\MHTH\MHTH.DatabaseSyncronize\obj\Debug\MHTH.DatabaseSyncronize.dll
+C:\Users\kevin\source\repos\MHTH\MHTH.DatabaseSyncronize\obj\Debug\MHTH.DatabaseSyncronize.pdb
