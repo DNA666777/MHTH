@@ -1,0 +1,88 @@
+﻿<div class="row">
+    <div class="col-md-6">
+        <h1><span id="questTitle">QUEST TITLE </span><span id="questStars">STARS</span>★</h1>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div style="background-color: #D6CCA9" class="col-md-5">
+        Requested by : <span id="questRequester">Example</span>
+        <ul>
+            <li>Where, <span id="questLocation"></span></li>
+            <li>When, Asap</li>
+            <li>Guild Reward, <span id="questReward"></span></li>
+            <li>Character Level, <span id="questLevel">number level characters</span></li>
+            <li>Primary Goal, <span id="questPrimaryTarget"> Slay a CREATURE</span></li>
+            <li id="questOptional" style="display: none">Optional Goal, Slay a CREATURE</li>
+            <li><i><span id="questLore">Quest Lore</span> </i></li>
+        </ul>
+    </div>
+</div>
+<br />
+<div class="row">
+    <div class="col-md-3">
+        <h2>Minor Challenges</h2>
+        @for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <div class="row" style="background-color: grey;text-align: center">
+                    MINOR
+                </div>
+            }
+            else
+            {
+                <div class="row" style="background-color: whitesmoke;text-align: center">
+                    MINOR
+                </div>
+            }
+        }
+    </div>
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-3">
+        <h2>Major Challenges</h2>
+        @for (int i = 0; i < 10; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <div class="row" style="background-color: grey;text-align: center">
+                    MAJOR
+                </div>
+            }
+            else
+            {
+                <div class="row" style="background-color: whitesmoke;text-align: center">
+                    MAJOR
+                </div>
+            }
+        }
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-3">
+        <h2>Benefits</h2>
+        @for (int i = 0; i < 4; i++)
+        {
+            if (i % 2 == 0)
+            {
+                <div class="row" style="background-color: grey;text-align: center">
+                    Benefits
+                </div>
+            }
+            else
+            {
+                <div class="row" style="background-color: whitesmoke;text-align: center">
+                    Benefits
+                </div>
+            }
+        }
+    </div>
+</div>
+<br/>
+<br/>
+<div class="row">
+</div>

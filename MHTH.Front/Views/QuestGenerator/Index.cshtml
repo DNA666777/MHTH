@@ -1,0 +1,56 @@
+﻿@model Monster_Hunter_Tabletop_Helper.Models.QuestGeneratorModel
+
+@{
+    ViewBag.Title = "Quest Generator";
+}
+<br/>
+<div id="questResult" style="display:none">
+    @Html.Partial("Partial/Quest")
+</div>
+<div id="questParams">
+    @Html.Partial("Partial/QuestParams")
+</div>
+
+<script type="text/javascript">
+    function GetByAverageLevelPlayers() {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GenerateByAverage")',  
+            data: {
+                numberPlayer : $('#numberPlayer').val(),
+                averageLevel: $('#averageLevel').val()
+    },  
+            contentType: "application/json; charset=utf-8",  
+            dataType: "json",
+            success: function (response) {
+                var toto = 1;
+            }
+        })
+    }; 
+    function GetGenerateByCR() {
+        $.ajax({
+            type: "GET",
+            url: '@Url.Action("GenerateByCR")',  
+            data: {
+                CR: $('#CR').val()
+            },  
+            contentType: "application/json; charset=utf-8",  
+            dataType: "json",
+            success: function (response) {
+                $('#questResult').show();
+                $('#questTitle')[0].innerHTML = response.QuestTitle;
+                $('#questStars')[0].innerHTML = " "+ Math.floor($('#CR').val()/4);
+                $('#questRequester')[0].innerHTML = "Villager";
+                $('#questLocation')[0].innerHTML = response.Where;
+                $('#questReward')[0].innerHTML = response.MoneyReward;
+                if ($('#CR').val() >= 20) {
+                    $('#questLevel')[0].innerHTML = "four 20th level characters.";
+                } else {
+                    $('#questLevel')[0].innerHTML = "four " + $('#CR').val()+"th level characters.";
+                }
+                
+                $('#questPrimaryTarget')[0].innerHTML = response.QuestGoalPrimary;
+                $('#questLore')[0].innerHTML = response.QuestLore;
+            }
+        })}; 
+</script>
