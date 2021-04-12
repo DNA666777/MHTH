@@ -14,6 +14,7 @@
         <AssociationConnector Association="MHTHModel.QuestTemplateLoreQuestTemplate" />
         <AssociationConnector Association="MHTHModel.QuestTemplateQuestTemplateClient" />
         <AssociationConnector Association="MHTHModel.MonsterQuestTemplate" />
+        <AssociationConnector Association="MHTHModel.MonsterMonster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

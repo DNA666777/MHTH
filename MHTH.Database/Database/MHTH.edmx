@@ -27,6 +27,10 @@
       <End Role="QuestTemplate" EntitySet="QuestTemplates" />
       <End Role="Monster" EntitySet="Monsters" />
     </AssociationSet>
+    <AssociationSet Name="MonsterMonster" Association="MHTHModel.Store.MonsterMonster">
+      <End Role="Monster" EntitySet="Monsters" />
+      <End Role="Monster1" EntitySet="Monsters" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Monsters">
     <Key>
@@ -35,6 +39,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CR" Type="decimal" Nullable="false" Precision="18" Scale="3" />
+    <Property Name="BaseMonsterId" Type="int" Nullable="true" />
   </EntityType>
   <EntityType Name="QuestTemplates">
     <Key>
@@ -119,6 +124,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="MonsterMonster">
+    <End Role="Monster" Type="MHTHModel.Store.Monsters" Multiplicity="0..1" />
+    <End Role="Monster1" Type="MHTHModel.Store.Monsters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Monster">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Monster1">
+        <PropertyRef Name="BaseMonsterId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -145,6 +162,10 @@
             <End Role="QuestTemplate" EntitySet="QuestTemplates" />
             <End Role="Monster" EntitySet="Monsters" />
           </AssociationSet>
+          <AssociationSet Name="MonsterMonster" Association="MHTHModel.MonsterMonster">
+            <End Role="Monster" EntitySet="Monsters" />
+            <End Role="Monster1" EntitySet="Monsters" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Monster">
           <Key>
@@ -153,6 +174,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="CR" Type="Decimal" Nullable="false" Precision="18" Scale="3" />
+          <Property Name="BaseMonsterId" Type="Int32" Nullable="true" />
         </EntityType>
         <EntityType Name="QuestTemplate">
           <Key>
@@ -246,6 +268,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="MonsterMonster">
+          <End Type="MHTHModel.Monster" Role="Monster" Multiplicity="0..1" />
+          <End Type="MHTHModel.Monster" Role="Monster1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Monster">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Monster1">
+              <PropertyRef Name="BaseMonsterId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -258,6 +292,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="CR" ColumnName="CR" />
+          <ScalarProperty Name="BaseMonsterId" ColumnName="BaseMonsterId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

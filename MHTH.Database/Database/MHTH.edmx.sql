@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/12/2021 13:50:31
--- Generated from EDMX file: C:\Users\kevin\source\repos\MHTH.Database\Database\MHTH.edmx
+-- Date Created: 04/12/2021 21:10:40
+-- Generated from EDMX file: C:\Users\kevin\source\repos\MHTH\MHTH.Database\Database\MHTH.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -58,7 +58,8 @@ GO
 CREATE TABLE [dbo].[Monsters] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [CR] decimal(18,3)  NOT NULL
+    [CR] decimal(18,3)  NOT NULL,
+    [BaseMonsterId] int  NULL
 );
 GO
 
@@ -193,6 +194,21 @@ GO
 CREATE INDEX [IX_FK_MonsterQuestTemplate]
 ON [dbo].[QuestTemplates]
     ([MonsterId]);
+GO
+
+-- Creating foreign key on [BaseMonsterId] in table 'Monsters'
+ALTER TABLE [dbo].[Monsters]
+ADD CONSTRAINT [FK_MonsterMonster]
+    FOREIGN KEY ([BaseMonsterId])
+    REFERENCES [dbo].[Monsters]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_MonsterMonster'
+CREATE INDEX [IX_FK_MonsterMonster]
+ON [dbo].[Monsters]
+    ([BaseMonsterId]);
 GO
 
 -- --------------------------------------------------

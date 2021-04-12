@@ -18,9 +18,13 @@ namespace MHTH.Service.Service
         private UnitOfWork unitOfWork = new UnitOfWork();
         private QuestTemplateMapper mapper = new QuestTemplateMapper();
 
-        private List<QuestTemplateDTO> GetQuestsByMonsterId(int monsterId)
+        private List<QuestTemplateDTO> GetQuestsByMonsterId(MonsterDTO monsterDto)
         {
-            var result = this.unitOfWork.QuestRepository.Get(t => t.MonsterId == monsterId).AsQueryable();
+            var result = this.unitOfWork.QuestRepository.Get(
+                t => t.MonsterId == monsterDto.Id
+                     || (monsterDto.BaseMonsterId != null && t.MonsterId == monsterDto.BaseMonsterId)
+                     ).AsQueryable();
+
             return result.ToListDTO<QuestTemplate, QuestTemplateDTO>(this.mapper.SelectorExpression).ToList();
         }
 
@@ -76,7 +80,7 @@ namespace MHTH.Service.Service
 
             foreach (var monsterDto in possibleMonster)
             {
-               var listQuest = GetQuestsByMonsterId(monsterDto.Id);
+               var listQuest = GetQuestsByMonsterId(monsterDto);
                if (listQuest.Count > 0)
                {
                    dictionaryMonsterQuest.Add(monsterDto,listQuest);

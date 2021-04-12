@@ -17,5 +17,6 @@ namespace MHTH.Database.Database
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal CR { get; set; }
+        public Nullable<int> BaseMonsterId { get; set; }
     }
 }

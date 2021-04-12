@@ -19,6 +19,7 @@
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal CR { get; set; }
+        public Nullable<int> BaseMonsterId { get; set; }
     }
 
     public class MonsterMapper : MapperBase<Monster, MonsterDTO>
@@ -36,7 +37,8 @@
                     ////ECC/ END CUSTOM CODE SECTION
                     Id = p.Id,
                     Name = p.Name,
-                    CR = p.CR
+                    CR = p.CR,
+                    BaseMonsterId = p.BaseMonsterId
                 });
             }
         }
@@ -48,6 +50,7 @@
             model.Id = dto.Id;
             model.Name = dto.Name;
             model.CR = dto.CR;
+            model.BaseMonsterId = dto.BaseMonsterId;
         }
     }
 #pragma warning restore CS1591 // Missing XML Comment
