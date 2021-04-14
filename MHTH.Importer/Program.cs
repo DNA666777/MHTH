@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MHTH.Importer
 {
     using System.Data.Entity.Migrations;
@@ -12,39 +13,42 @@ namespace MHTH.Importer
     using MHTH.Database.Database;
 
     using Microsoft.VisualBasic.FileIO;
-
-    class Program
+    /// <summary>
+    /// This console program is ONE TIME use so assume be trash coding
+    /// </summary>
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
+            UpdateMonster();
             UpdateQuestMhw();
+            UpdateQuestMHGU();
+            UpdateMonsterVariant();
         }
 
-        static void UpdateMonsterVariant()
+        /// <summary>
+        /// The update monster variant.
+        /// </summary>
+        private static void UpdateMonsterVariant()
         {
             MHTHEntities mhthEntities = new MHTHEntities();
             foreach (var monster in mhthEntities.Monsters.ToList())
             {
-                if(monster.Name.Contains("Vespoid") ||
-                   monster.Name == "Ceanataur" ||
-                   monster.Name == "Hermitaur" ||
-                   monster.Name.Contains("Jagras") ||
-                   monster.Name.Contains("Girros") ||
-                   monster.Name.Contains("Ludroth") ||
-                   monster.Name.Contains("Baggi") ||
-                   monster.Name.Contains("Genprey") ||
-                   monster.Name.Contains("Ioprey") ||
-                   monster.Name.Contains("Ioprey") ||
-                   monster.Name.Contains("Jaggi") ||
-                   monster.Name.Contains("Maccao") ||
-                   monster.Name.Contains("Velociprey") ||
-                   monster.Name.Contains("Wroggi") ||
-                   monster.Name.Contains("Shakalaka") ||
-                   monster.Name.Contains("Giggi") ||
-                   monster.Name.Contains("Blango") ||
-                   monster.Name.Contains("Conga") ||
-                   monster.Name.Contains("drome")
-                   )
+                if (monster.Name.Contains("Vespoid") || monster.Name == "Ceanataur" || monster.Name == "Hermitaur" ||
+                    monster.Name.Contains("Jagras") ||
+                    monster.Name.Contains("Girros") ||
+                    monster.Name.Contains("Ludroth") ||
+                    monster.Name.Contains("Baggi") ||
+                    monster.Name.Contains("Genprey") ||
+                    monster.Name.Contains("Ioprey") ||
+                    monster.Name.Contains("Ioprey") ||
+                    monster.Name.Contains("Jaggi") ||
+                    monster.Name.Contains("Maccao") ||
+                    monster.Name.Contains("Velociprey") ||
+                    monster.Name.Contains("Wroggi") ||
+                    monster.Name.Contains("Shakalaka") ||
+                    monster.Name.Contains("Giggi") || monster.Name.Contains("Blango") || monster.Name.Contains("Conga")
+                    || monster.Name.Contains("drome"))
                     continue;
 
                 var possibleVariant = mhthEntities.Monsters.Where(t => t.Id != monster.Id && t.Name.Contains(monster.Name)).ToList();
@@ -59,12 +63,16 @@ namespace MHTH.Importer
                 }
             }
         }
-        static void UpdateMonster()
+
+        /// <summary>
+        /// The update monster.
+        /// </summary>
+        private static void UpdateMonster()
         {
 
             MHTHEntities mhthEntities = new MHTHEntities();
             mhthEntities.Database.Connection.Open();
-            var allLine =File.ReadAllLines("C:\\Users\\kevin\\Desktop\\MonsterList.txt");
+            var allLine =File.ReadAllLines("..\\CSVToImport\\MonsterList.txt");
             decimal currentCr = 0;
             foreach (var line in allLine)
             {
@@ -83,9 +91,13 @@ namespace MHTH.Importer
                 }
             }
         }
-        static void UpdateQuestMHGU()
+
+        /// <summary>
+        /// The update quest mhgu.
+        /// </summary>
+        private static void UpdateQuestMHGU()
         {
-            using (TextFieldParser parser = new TextFieldParser(@"C:\Users\kevin\Documents\quests.csv"))
+            using (TextFieldParser parser = new TextFieldParser(@".\CSVToImport\quests.csv"))
             {
                 MHTHEntities mhthEntities = new MHTHEntities();
 
@@ -176,9 +188,13 @@ namespace MHTH.Importer
                 }
             }
         }
-        static void UpdateQuestMhw()
+
+        /// <summary>
+        /// The update quest mhw.
+        /// </summary>
+        private static void UpdateQuestMhw()
         {
-            using (TextFieldParser parser = new TextFieldParser(@"C:\Users\kevin\Documents\questsMHW.csv"))
+            using (TextFieldParser parser = new TextFieldParser(@".\CSVToImport\questsMHW.csv"))
             {
                 MHTHEntities mhthEntities = new MHTHEntities();
                 List<QuestTemplate> qtlist = new List<QuestTemplate>();
@@ -191,6 +207,7 @@ namespace MHTH.Importer
                 while (!parser.EndOfData)
                 {
                     //Processing row
+                    //Find index of row
                     string[] fields = parser.ReadFields();
                     if (firstLine)
                     {
