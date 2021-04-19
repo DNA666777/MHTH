@@ -13,6 +13,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MHTH.DatabaseSyncronize", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHTH.Database", "MHTH.Database\MHTH.Database.csproj", "{68FFD7D2-87BB-44F2-BD17-A01EA1EF94BF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MHTH.Bot", "MHTH.Bot\MHTH.Bot.csproj", "{CE539BEB-3609-416A-B878-DC13FA9001AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{68FFD7D2-87BB-44F2-BD17-A01EA1EF94BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FFD7D2-87BB-44F2-BD17-A01EA1EF94BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FFD7D2-87BB-44F2-BD17-A01EA1EF94BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE539BEB-3609-416A-B878-DC13FA9001AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE539BEB-3609-416A-B878-DC13FA9001AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE539BEB-3609-416A-B878-DC13FA9001AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE539BEB-3609-416A-B878-DC13FA9001AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

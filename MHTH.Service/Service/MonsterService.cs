@@ -10,7 +10,7 @@ namespace MHTH.Service.Service
     using MHTH.Service.Dto;
     using MHTH.Service.Dto.Infrastructure;
 
-    class MonsterService
+    public class MonsterService
     {
 
         private UnitOfWork unitOfWork = new UnitOfWork();
@@ -29,7 +29,17 @@ namespace MHTH.Service.Service
             var result =this.unitOfWork.MonsterRepository.Get(t => t.CR == CR).AsQueryable();
             return result.ToListDTO<Monster,MonsterDTO>(this.mapper.SelectorExpression).ToList();
         }
-        
+
+        public MonsterDTO GetByName(string name)
+        {
+            var result = this.unitOfWork.MonsterRepository.Get(t => t.Name == name).FirstOrDefault();
+            if(result!=null)
+                return result.ToDTO(this.mapper.SelectorExpression);
+            else
+                return null;
+            
+        }
+
     }
-    
+
 }
